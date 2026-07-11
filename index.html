@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resepsiyonistim | Kurulum Sihirbazı</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="onboarding-container">
+            <header>
+                <h1>Asistan Kurulum Sihirbazı</h1>
+                <div class="progress-bar-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </header>
+
+            <form id="onboarding-form" novalidate>
+                <!-- Adım 1: İşletme Temel Bilgileri -->
+                <div class="form-step active" data-step="1">
+                    <h2><span class="step-number">1</span>İşletme Temel Bilgileri</h2>
+                    <div class="form-group">
+                        <label for="businessName">İşletme Adı</label>
+                        <input type="text" id="businessName" name="businessName" placeholder="Örn: Sapanca Huzur Bungalov" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="businessType">İşletme Tipi</label>
+                        <select id="businessType" name="businessType" required>
+                            <option value="" disabled selected>Seçiniz...</option>
+                            <option value="Bungalov">Bungalov</option>
+                            <option value="Butik Otel">Butik Otel</option>
+                            <option value="Villa">Villa</option>
+                            <option value="Apart">Apart</option>
+                            <option value="Diğer">Diğer</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+                <!-- Adım 2: Asistan Karşılama Mesajı Ayarları -->
+                <div class="form-step" data-step="2">
+                    <h2><span class="step-number">2</span>Asistan Karşılama Ayarları</h2>
+                    <div class="form-group">
+                        <label for="welcomeMessage">Misafirler için Karşılama Mesajı</label>
+                        <textarea id="welcomeMessage" name="welcomeMessage" rows="4" placeholder="Merhaba! {{İşletme Adı}}'na hoş geldiniz. Size nasıl yardımcı olabilirim?" required></textarea>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="assistantTone">Asistanın İletişim Tonu</label>
+                        <select id="assistantTone" name="assistantTone" required>
+                            <option value="samimi">Samimi ve Yardımsever</option>
+                            <option value="profesyonel">Profesyonel ve Resmi</option>
+                            <option value="enerjik">Neşeli ve Enerjik</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+                <!-- Adım 3: İletişim ve Onay -->
+                <div class="form-step" data-step="3">
+                    <h2><span class="step-number">3</span>İletişim ve Onay</h2>
+                    <div class="form-group">
+                        <label for="contactEmail">Yetkili E-posta Adresi</label>
+                        <input type="email" id="contactEmail" name="contactEmail" placeholder="bildirimler_icin@isletmeniz.com" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">
+                            <a href="#" target="_blank">Hizmet Şartlarını</a> ve <a href="#" target="_blank">Gizlilik Politikasını</a> okudum, kabul ediyorum.
+                        </label>
+                        <div class="error-message single-line-error"></div>
+                    </div>
+                </div>
+
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary" id="prev-btn" style="display: none;">Geri</button>
+                    <button type="button" class="btn btn-primary" id="next-btn">İleri</button>
+                    <button type="submit" class="btn btn-primary" id="submit-btn" style="display: none;">Kaydet ve Aktive Et</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="success-container" style="display: none;">
+            <div class="success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+            <h2>Kurulum Başarılı!</h2>
+            <p>Tebrikler! Yapay zeka asistanınız başarıyla kuruldu ve şimdi aktif. Misafirlerinizi karşılamaya hazır.</p>
+            <button class="btn btn-primary" id="dashboard-btn">Panele Git</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
