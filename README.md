@@ -6,7 +6,7 @@
 
 ## 🎯 Neden Onboarding Kritik?
 
-AI resepsiyonist (Elif) sadece ona verilen verilerle cevap verebilir. Onboarding'te eksik veya yanlış bir bilgi:
+AI resepsiyonist sadece ona verilen verilerle cevap verebilir. Onboarding'te eksik veya yanlış bir bilgi:
 
 | Eksik Veri | Sonuç |
 |------------|-------|
